@@ -4,7 +4,9 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import '~assets/scss/_variables.scss';
+
 html {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
@@ -21,6 +23,20 @@ html {
   margin: 0;
 }
 
+body {
+  background: $off-white;
+}
+
+.container {
+  padding: 0 16px;
+  margin-bottom: 32px;
+}
+
+.container--intro {
+  padding: 0;
+}
+
+/* Helpers */
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
