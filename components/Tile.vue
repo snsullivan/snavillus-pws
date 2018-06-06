@@ -1,12 +1,15 @@
 <template>
-  <div id="intro-ref" class="tile-wrapper">
-    <article class="tile" v-for="item in catalog" :key="item.id">
+  <div class="tile-wrapper">
+    <article :class="['tile', {'tile--badges': item.badges}]" v-for="item in catalog" :key="item.id">
       <a class="tile__link" :href="item.url">
         <span class="tile__image" :style="{'background-image': `url(${ item.img });`}"></span>
         <span class="visually-hidden">{{ item.title }}</span>
       </a>
-      <h2 class="tile__title">{{ item.title }}</h2>
+      <h3 class="tile__title">{{ item.title }}</h3>
       <p class="tile__description">{{ item.desc }}</p>
+      <span v-if="item.badges" class="tile__badges">
+        <i v-for="badge in item.badges" :key="badge.id" :class="[badge.icon, 'tile__badge']"></i>
+      </span>
     </article>
   </div>
 </template>
@@ -30,15 +33,19 @@ $color-shadow-card: rgba(0, 0, 0, .12);
 .tile {
   background: $white;
   box-shadow: 0 2px 3px 0 $color-shadow-card;
+  filter: grayscale(0);
   flex: 1 1 100%;
   margin-bottom: $gutter-width;
   padding: 12px 12px 16px;
   position: relative;
-  transition: box-shadow .25s linear;
-  will-change: box-shadow;
+  transition: box-shadow .15s linear,
+              filter .15s linear;
+  will-change: box-shadow,
+               filter;
 
   &:hover {
     box-shadow: 0 2px 9px 0 $color-shadow-card;
+    filter: grayscale(100%);
   }
 
   @include medium {
@@ -78,7 +85,25 @@ $color-shadow-card: rgba(0, 0, 0, .12);
 }
 
 .tile__description {
+ .tile--badges & {
+   padding-bottom: 32px;
+ }
+}
 
+.tile__badges {
+  bottom: 16px;
+  position: absolute;
+  right: 12px;
+  z-index: -1; // Keeps href click area on top
+}
+
+.tile__badge {
+  color: #636363;
+  font-size: 24px;
+
+  &:not(:first-of-type) {
+    padding-left: 4px;
+  }
 }
 </style>
 
@@ -87,29 +112,50 @@ export default {
   data: () => ({
     catalog: [
       {
-        title: 'Post1 title',
-        desc: 'Post1 desc',
-        // img: './images/snavillus-bw.jpg',
-        img: 'https://loremflickr.com/320/240/dog',
-        url: 'https://www.google.com'
+        title: 'Huge Inc',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum blanditiis ducimus, quasi earum accusantium et eligendi deleniti, dolorum animi suscipit non? Error voluptates ipsum nobis. Eaque, corporis. Minus, odio perferendis.',
+        img: './images/huge_6.2018.jpg',
+        url: 'https://www.hugeinc.com',
+        badges: [
+          {icon: 'fab fa-html5'},
+          {icon: 'fab fa-css3-alt'},
+          {icon: 'fab fa-js'}
+        ]
       },
       {
-        title: 'Post2 title',
-        desc: 'Post2 desc',
-        img: 'https://loremflickr.com/320/240/dog',
-        url: 'https://www.google.com'
+        title: 'Think with Google',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum blanditiis ducimus, quasi earum accusantium et eligendi deleniti, dolorum animi suscipit non? Error voluptates ipsum nobis. Eaque, corporis. Minus, odio perferendis.',
+        img: './images/twg_6.2018.jpg',
+        url: 'https://www.thinkwithgoogle.com',
+        badges: [
+          {icon: 'fab fa-html5'},
+          {icon: 'fab fa-css3-alt'},
+          {icon: 'fab fa-vuejs'},
+          {icon: 'fab fa-angular'}
+        ]
       },
       {
-        title: 'Post3 title',
-        desc: 'Post3 desc',
-        img: 'https://loremflickr.com/320/240/dog',
-        url: 'https://www.google.com'
+        title: 'Think with Google Newsletter',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum blanditiis ducimus, quasi earum accusantium et eligendi deleniti.',
+        img: './images/newsletter_6.2018.jpg',
+        url: 'https://getsubscriptions.withgoogle.com/newsletter/thinkwithgoogle/signup',
+        badges: [
+          {icon: 'fab fa-html5'},
+          {icon: 'fab fa-css3-alt'},
+          {icon: 'fab fa-js'}
+        ]
       },
       {
-        title: 'Post4 title',
-        desc: 'Post4 desc',
-        img: 'https://loremflickr.com/320/240/dog',
-        url: 'https://www.google.com'
+        title: 'Google Material',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum blanditiis ducimus, quasi earum accusantium et eligendi deleniti, dolorum animi suscipit non?',
+        img: './images/material_6.2018.jpg',
+        url: 'https://material.io',
+        badges: [
+          {icon: 'fab fa-html5'},
+          {icon: 'fab fa-css3-alt'},
+          {icon: 'fab fa-js'},
+          {icon: 'fab fa-google-drive'}
+        ]
       }
     ]
   })

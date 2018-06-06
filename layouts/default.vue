@@ -6,6 +6,7 @@
 
 <style lang="scss">
 @import '~assets/scss/_variables.scss';
+@import '~assets/scss/_placeholders.scss';
 
 html {
   font-family: 'Roboto', Arial, sans-serif;
@@ -23,17 +24,47 @@ html {
   margin: 0;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: $off-white;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 .container {
-  padding: 0 16px;
-  margin-bottom: 32px;
+  @extend %gutters;
+  @extend %cover-fixed;
+
+  background: $off-white;
+  padding-top: 32px;
 }
 
 .container--intro {
   padding: 0;
+}
+
+.section-title {
+  margin-bottom: 8px;
+}
+
+.section-copy {
+  margin-bottom: 32px;
 }
 
 /* Helpers */

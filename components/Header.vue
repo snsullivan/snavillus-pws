@@ -1,6 +1,10 @@
 <template>
-  <header>
-    header stuffs!
+  <header class="header">
+    <button class="hamburger" type="button" v-on:click="$store.commit('toggleNav')">
+      <i class="fas fa-bars hamburger__icon"></i>
+    </button>
+
+    <Social/>
   </header>
 </template>
 
@@ -8,11 +12,36 @@
 @import '~assets/scss/_variables.scss';
 @import '~assets/scss/_mixins.scss';
 
+.header {
+  align-items: center;
+  background: #202124;
+  color: $white;
+  display: flex;
+  height: $header-height;
+  padding: 16px;
+}
 
+.hamburger {
+
+}
+
+.hamburger__icon {
+  color: $white;
+  font-size: 24px;
+}
 </style>
 
 <script>
-export default {
+import Social from '~/components/Social.vue'
 
+export default {
+  components: {
+    Social
+  },
+  methods: {
+    toggleNav() {
+      // this.$root.$emit('NAV_TOGGLE');
+    }
+  },
 }
 </script>
