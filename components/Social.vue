@@ -9,13 +9,24 @@
 
 <style lang="scss">
 @import '~assets/scss/_variables.scss';
+@import '~assets/scss/_mixins.scss';
 
 .social-platforms {
   .header & {
     margin-left: auto;
   }
+
   .footer & {
-    margin-right: auto;
+    flex-basis: 100%;
+    margin-bottom: 8px;
+    text-align: center;
+
+    @include medium {
+      flex-basis: initial;
+      margin-bottom: 0;
+      margin-right: auto;
+      text-align: initial;
+    }
   }
 }
 
@@ -25,6 +36,13 @@
 
 .social-platforms__icon {
   color: $white;
+  font-size: 1.25rem;
+  transition: font-size .25s linear;
+  will-change: font-size;
+
+  @include medium {
+    font-size: 1rem;
+  }
 }
 </style>
 

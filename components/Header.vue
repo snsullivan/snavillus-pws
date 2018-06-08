@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <button class="hamburger" type="button" v-on:click="$store.commit('toggleNav')">
+    <button class="hamburger" type="button" v-on:click="toggleNav()">
       <i class="fas fa-bars hamburger__icon"></i>
     </button>
 
@@ -14,7 +14,7 @@
 
 .header {
   align-items: center;
-  background: #202124;
+  background: $color2;
   color: $white;
   display: flex;
   height: $header-height;
@@ -40,7 +40,8 @@ export default {
   },
   methods: {
     toggleNav() {
-      // this.$root.$emit('NAV_TOGGLE');
+      this.$store.commit('toggleNav');
+      this.$root.$emit('NAV_TOGGLE');
     }
   },
 }

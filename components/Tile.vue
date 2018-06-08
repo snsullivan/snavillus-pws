@@ -33,19 +33,19 @@ $color-shadow-card: rgba(0, 0, 0, .12);
 .tile {
   background: $white;
   box-shadow: 0 2px 3px 0 $color-shadow-card;
-  filter: grayscale(0);
   flex: 1 1 100%;
   margin-bottom: $gutter-width;
   padding: 12px 12px 16px;
   position: relative;
-  transition: box-shadow .15s linear,
-              filter .15s linear;
-  will-change: box-shadow,
-               filter;
+  transition: box-shadow .15s linear;
+  will-change: box-shadow;
 
   &:hover {
     box-shadow: 0 2px 9px 0 $color-shadow-card;
-    filter: grayscale(100%);
+
+    .tile__image {
+      filter: grayscale(100%);
+    }
   }
 
   @include medium {
@@ -67,6 +67,7 @@ $color-shadow-card: rgba(0, 0, 0, .12);
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 1;
   }
 }
 
@@ -74,9 +75,12 @@ $color-shadow-card: rgba(0, 0, 0, .12);
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   display: block;
+  filter: grayscale(0);
   height: 0;
   margin-bottom: 16px;
   padding-top: 56.25%;
+  transition: filter .15s linear;
+  will-change: filter;
 }
 
 .tile__title {
@@ -86,7 +90,7 @@ $color-shadow-card: rgba(0, 0, 0, .12);
 
 .tile__description {
  .tile--badges & {
-   padding-bottom: 32px;
+   padding-bottom: 24px + 16px; // size of tile__badge plus 16px buffer
  }
 }
 
@@ -94,11 +98,10 @@ $color-shadow-card: rgba(0, 0, 0, .12);
   bottom: 16px;
   position: absolute;
   right: 12px;
-  z-index: -1; // Keeps href click area on top
 }
 
 .tile__badge {
-  color: #636363;
+  color: $color-warm-grey;
   font-size: 24px;
 
   &:not(:first-of-type) {

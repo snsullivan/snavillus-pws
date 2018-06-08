@@ -15,6 +15,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
     ]
   },
+  css: [
+    '@/assets/scss/main.scss'
+  ],
   /*
   ** Customize the progress bar color
   */

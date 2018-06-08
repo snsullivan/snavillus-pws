@@ -15,7 +15,7 @@
       <section id="skills" class="container">
         <h2 class="section-title">Mas here.</h2>
         <p class="section-copy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore doloremque officiis veritatis accusamus, perspiciatis dolorem sunt fugit, nesciunt nulla dignissimos perferendis ad distinctio debitis repellat inventore sit vitae nemo. Aliquam.</p>
-        <Donut/>
+        <CareerPath/>
       </section>
     </main>
 
@@ -30,6 +30,7 @@ import Sidenav from '~/components/Sidenav.vue'
 import Intro from '~/components/Intro.vue'
 import Tile from '~/components/Tile.vue'
 import Donut from '~/components/Donut.vue'
+import CareerPath from '~/components/CareerPath.vue'
 import Footer from '~/components/Footer.vue'
 import UiMask from '~/components/UiMask.vue'
 
@@ -40,6 +41,7 @@ export default {
     Intro,
     Tile,
     Donut,
+    CareerPath,
     Footer,
     UiMask
   },

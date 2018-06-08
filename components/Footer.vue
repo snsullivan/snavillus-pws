@@ -14,12 +14,17 @@
   @extend %cover-fixed;
 
   align-items: center;
-  background: #202124;
+  background: $color2;
   color: $white;
   display: flex;
-  height: $header-height;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 16px;
+
+  @include medium {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
 }
 </style>
 

@@ -19,8 +19,17 @@
 @import '~assets/scss/_mixins.scss';
 @import '~assets/scss/_placeholders.scss';
 
+@keyframes levitate {
+  0% {
+    transform: translateY(95%);
+  }
+  100% {
+    transform: translateY(110%);
+  }
+}
+
 .intro-wrapper {
-  background: tomato;
+  background: rgba($color-warm-grey, .5);
   height: calc(100vh - #{$header-height});
   overflow: auto;
   position: relative;
@@ -45,7 +54,7 @@
 }
 
 .see-more {
-  background: violet;
+  background: $color5;
   border-radius: 50%;
   bottom: 16px;
   color: $white;
@@ -58,6 +67,7 @@
 }
 
 .see-more__icon {
+  animation: levitate .75s ease infinite alternate;
   transform: translateY(100%);
 }
 </style>

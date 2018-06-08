@@ -13,6 +13,7 @@
   position: fixed;
   right: 0;
   top: 0;
+  transition: opacity .25s linear;
   visibility: hidden;
   z-index: -1;
 
