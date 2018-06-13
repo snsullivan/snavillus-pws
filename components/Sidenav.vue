@@ -8,6 +8,8 @@
         <a :href="link.url" :tabindex="$store.state.navActive ? 1 : -1" v-on:click.prevent="$store.commit('toggleNav', false)" v-scroll-to="{el: link.url, easing: [.4, 0, .2, 1], duration: 600}" class="sidenav__menu-link">{{ link.name }}</a>
       </li>
     </ul>
+
+    <Social/>
   </nav>
 </template>
 
@@ -18,6 +20,7 @@
 .sidenav {
   background: $color-fog;
   bottom: 0;
+  max-width: 280px;
   padding-top: 56px; // close button size + padding
   position: fixed;
   top: 0;
@@ -35,7 +38,6 @@
 .sidenav__close-btn {
   box-sizing: content-box;
   height: 24px;
-  padding: 0;
   padding: 8px;
   position: absolute;
   right: 8px;
@@ -49,8 +51,10 @@
 
 // MENU
 .sidenav__menu {
-  padding: 0;
+  height: 100%;
   margin: 0;
+  overflow: auto;
+  padding: 8px 0 64px 0;
 }
 
 .sidenav__menu-link {
@@ -66,8 +70,11 @@
 </style>
 
 <script>
+import Social from '~/components/Social.vue';
+
 export default {
   components: {
+    Social
   },
   data() {
     return {

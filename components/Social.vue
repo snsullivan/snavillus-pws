@@ -28,6 +28,15 @@
       text-align: initial;
     }
   }
+
+  .sidenav & {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 .social-platforms__link {
@@ -42,6 +51,10 @@
 
   @include medium {
     font-size: 1rem;
+  }
+
+  .sidenav & {
+    color: $color2;
   }
 }
 </style>

@@ -116,7 +116,7 @@ export default {
     catalog: [
       {
         title: 'Huge Inc',
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum blanditiis ducimus, quasi earum accusantium et eligendi deleniti, dolorum animi suscipit non? Error voluptates ipsum nobis. Eaque, corporis. Minus, odio perferendis.',
+        desc: 'The first project I cut my teeth on at Huge was the company website.',
         img: './images/huge_6.2018.jpg',
         url: 'https://www.hugeinc.com',
         badges: [

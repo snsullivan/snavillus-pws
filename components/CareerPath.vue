@@ -104,17 +104,17 @@ export default {
       jobs: [
         {
           name: 'Harrison&Star',
-          url: '',
+          url: 'http://www.harrisonandstar.com',
           year: ''
         },
         {
           name: 'mcgarrybowen',
-          url: '',
+          url: 'https://www.mcgarrybowen.com',
           year: ''
         },
         {
           name: 'Huge',
-          url: '',
+          url: 'https://www.hugeinc.com',
           year: ''
         },
         {

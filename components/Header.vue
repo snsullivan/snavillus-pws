@@ -3,8 +3,9 @@
     <button class="hamburger" type="button" v-on:click="toggleNav()">
       <i class="fas fa-bars hamburger__icon"></i>
     </button>
-
-    <Social/>
+    <nuxt-link to="/" class="header__logo">
+      <img class="header__logo-img" src="~/static/images/snavillus_logo-light.svg" alt="snavillus logo">
+    </nuxt-link>
   </header>
 </template>
 
@@ -22,22 +23,29 @@
 }
 
 .hamburger {
-
+  margin-left: -8px;
+  padding: 8px;
 }
 
 .hamburger__icon {
   color: $white;
   font-size: 24px;
 }
+
+.header__logo {
+  color: $white;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.header__logo-img {
+  height: 32px;
+  width: auto;
+}
 </style>
 
 <script>
-import Social from '~/components/Social.vue'
-
 export default {
-  components: {
-    Social
-  },
   methods: {
     toggleNav() {
       this.$store.commit('toggleNav');

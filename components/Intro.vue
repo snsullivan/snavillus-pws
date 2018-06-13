@@ -2,9 +2,10 @@
   <div class="intro-wrapper">
     <div class="intro-greeting">
       <img class="intro-greeting__image" src="https://loremflickr.com/320/320/pug" alt="">
-      <h1 class="intro-greeting__title">Lorem ipsum dolor sit amet consectetur adipisicing elit!</h1>
-      <p class="intro-greeting__copy">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis quos earum eveniet libero nisi necessitatibus ad quod, impedit nostrum ea voluptates maiores? Temporibus provident culpa ab, molestiae animi perferendis totam.
-      Fugiat ab quidem quasi id ducimus, tempora ea rem beatae, necessitatibus sapiente commodi fugit. Suscipit aliquam mollitia eaque.</p>
+      <!-- <img class="intro-greeting__image" src="~/static/images/snavillus_logo-dark.svg" alt="snavillus logo"> -->
+      <h1 class="intro-greeting__title">Lorem ipsum dolor sit. <span class="intro-greeting__title-trailer">Officiis quos earum even.</span></h1>
+      <p class="intro-greeting__copy">I enjoy turning ambitious ideas into responsive web applications.</p>
+      <p class="intro-greeting__copy">I currently live and work in Brooklyn. Handcrafting artisanal, local code in small batches.</p>
     </div>
 
     <a href="#" class="see-more" v-scroll-to="{el: '#recent-work', easing: [.4, 0, .2, 1], duration: 600}">
@@ -36,21 +37,37 @@
 }
 
 .intro-greeting {
+  margin: 0 auto;
   padding: 16px;
+
+  @include medium {
+    max-width: 75vw;
+  }
+
+  @include large {
+    max-width: 50vw;
+  }
 }
 
 .intro-greeting__image {
   display: block;
   margin: 0 auto 16px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .intro-greeting__title {
+  font-size: 32px;
   margin-bottom: 8px;
 }
 
-.intro-greeting__copy {
+.intro-greeting__title-trailer {
+  display: block;
+  font-size: 16px;
+  padding-top: 4px;
+}
 
+.intro-greeting__copy {
+  margin-bottom: 4px;
 }
 
 .see-more {

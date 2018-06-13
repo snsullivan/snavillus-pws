@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Sean Sullivan, Web Engineer.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v3' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:400,700' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
     ]
